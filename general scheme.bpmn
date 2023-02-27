@@ -4,16 +4,20 @@
     <bpmn:startEvent id="StartEvent_1">
       <bpmn:outgoing>Flow_1ydy4nl</bpmn:outgoing>
     </bpmn:startEvent>
-    <bpmn:task id="Activity_0enocer" />
+    <bpmn:task id="Activity_0enocer">
+      <bpmn:incoming>Flow_0jmltqx</bpmn:incoming>
+    </bpmn:task>
     <bpmn:task id="Activity_05j4a8a">
       <bpmn:incoming>Flow_0wiydu6</bpmn:incoming>
     </bpmn:task>
     <bpmn:exclusiveGateway id="Gateway_11kxds0">
       <bpmn:incoming>Flow_1ydy4nl</bpmn:incoming>
       <bpmn:outgoing>Flow_0wiydu6</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0jmltqx</bpmn:outgoing>
     </bpmn:exclusiveGateway>
     <bpmn:sequenceFlow id="Flow_1ydy4nl" sourceRef="StartEvent_1" targetRef="Gateway_11kxds0" />
     <bpmn:sequenceFlow id="Flow_0wiydu6" sourceRef="Gateway_11kxds0" targetRef="Activity_05j4a8a" />
+    <bpmn:sequenceFlow id="Flow_0jmltqx" sourceRef="Gateway_11kxds0" targetRef="Activity_0enocer" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1wrzay5">
@@ -39,6 +43,11 @@
         <di:waypoint x="328" y="210" />
         <di:waypoint x="328" y="240" />
         <di:waypoint x="360" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0jmltqx_di" bpmnElement="Flow_0jmltqx">
+        <di:waypoint x="270" y="185" />
+        <di:waypoint x="270" y="150" />
+        <di:waypoint x="340" y="150" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
