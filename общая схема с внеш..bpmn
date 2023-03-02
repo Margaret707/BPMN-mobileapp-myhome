@@ -26,6 +26,7 @@
     <bpmn:messageFlow id="Flow_0pnp7yg" sourceRef="Activity_0owbvhn" targetRef="Activity_0wuj114" />
     <bpmn:messageFlow id="Flow_0flk35h" sourceRef="Activity_0aa6o6d" targetRef="Activity_0wuj114" />
     <bpmn:messageFlow id="Flow_01aeif3" sourceRef="Activity_1bh51bc" targetRef="Activity_0wuj114" />
+    <bpmn:messageFlow id="Flow_1xcqfxs" sourceRef="Activity_0f81dvt" targetRef="Participant_07dlyv0" />
   </bpmn:collaboration>
   <bpmn:process id="Process_1dva5vl" isExecutable="true" />
   <bpmn:process id="Process_1wrzay5" isExecutable="true">
@@ -75,61 +76,6 @@
   </bpmn:process>
   <bpmn:process id="Process_0q8fv3l" isExecutable="true" />
   <bpmn:process id="Process_1668tfv" isExecutable="true">
-    <bpmn:serviceTask id="Activity_07cawcn" name="создать мероприятие">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="taskDefiniton" />
-      </bpmn:extensionElements>
-      <bpmn:outgoing>Flow_0xfnmw7</bpmn:outgoing>
-    </bpmn:serviceTask>
-    <bpmn:scriptTask id="Activity_1bh51bc" name="расчет кредита подключений">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="taskDefiniton" />
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0iqpvh1</bpmn:incoming>
-    </bpmn:scriptTask>
-    <bpmn:scriptTask id="Activity_0aa6o6d" name="регистрация подключений">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="taskDefiniton" />
-      </bpmn:extensionElements>
-      <bpmn:outgoing>Flow_0iqpvh1</bpmn:outgoing>
-    </bpmn:scriptTask>
-    <bpmn:serviceTask id="Activity_1yaffe5" name="открыть доступ к трансляции">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="taskDefiniton" />
-      </bpmn:extensionElements>
-    </bpmn:serviceTask>
-    <bpmn:serviceTask id="Activity_18g0kqz" name="отобразить окно для сканирования QR кода">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="taskDefiniton" />
-      </bpmn:extensionElements>
-    </bpmn:serviceTask>
-    <bpmn:scriptTask id="Activity_0hnaz65" name="сгенерировать QR код">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="taskDefiniton" />
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_0xfnmw7</bpmn:incoming>
-    </bpmn:scriptTask>
-    <bpmn:scriptTask id="Activity_1rbwuba" name="вести учет времени действия QR кода">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="taskDefiniton" />
-      </bpmn:extensionElements>
-      <bpmn:outgoing>Flow_1tld6x2</bpmn:outgoing>
-      <bpmn:property id="Property_1bdin65" name="__targetRef_placeholder" />
-      <bpmn:dataInputAssociation id="DataInputAssociation_0m1hb08">
-        <bpmn:sourceRef>DataObjectReference_025vpig</bpmn:sourceRef>
-        <bpmn:targetRef>Property_1bdin65</bpmn:targetRef>
-      </bpmn:dataInputAssociation>
-    </bpmn:scriptTask>
-    <bpmn:scriptTask id="Activity_1saujpl" name="вести учет всех зарег-ных в приложении по видам пользователей">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="taskDefiniton" />
-      </bpmn:extensionElements>
-      <bpmn:property id="Property_0tqhy91" name="__targetRef_placeholder" />
-      <bpmn:dataInputAssociation id="DataInputAssociation_1fly57k">
-        <bpmn:sourceRef>DataStoreReference_0oljru9</bpmn:sourceRef>
-        <bpmn:targetRef>Property_0tqhy91</bpmn:targetRef>
-      </bpmn:dataInputAssociation>
-    </bpmn:scriptTask>
     <bpmn:serviceTask id="Activity_1qmyer9" name="закрыть доступ к трансляции">
       <bpmn:extensionElements>
         <zeebe:taskDefinition type="taskDefiniton" />
@@ -146,19 +92,11 @@
       <bpmn:incoming>Flow_0wx4cuf</bpmn:incoming>
       <bpmn:outgoing>Flow_1tmxch1</bpmn:outgoing>
     </bpmn:scriptTask>
-    <bpmn:scriptTask id="Activity_0owbvhn" name="вести учет количества слушателей подключенных к трансляции">
-      <bpmn:extensionElements>
-        <zeebe:taskDefinition type="taskDefiniton" />
-      </bpmn:extensionElements>
-      <bpmn:incoming>Flow_1tld6x2</bpmn:incoming>
-      <bpmn:outgoing>Flow_0wx4cuf</bpmn:outgoing>
-    </bpmn:scriptTask>
     <bpmn:serviceTask id="Activity_0imj6js" name="показать приветственный экран и мини-инструкции пользователю">
       <bpmn:extensionElements>
         <zeebe:taskDefinition type="taskDefiniton" />
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:dataStoreReference id="DataStoreReference_0oljru9" />
     <bpmn:serviceTask id="Activity_0pa53zk" name="отобразить полей для выбора статуса пользователя">
       <bpmn:extensionElements>
         <zeebe:taskDefinition type="taskDefiniton" />
@@ -174,13 +112,84 @@
         <zeebe:taskDefinition type="taskDefiniton" />
       </bpmn:extensionElements>
     </bpmn:serviceTask>
-    <bpmn:dataObjectReference id="DataObjectReference_025vpig" name="QR код мероприятия - действует&#10;24 часа" dataObjectRef="DataObject_1p1q4fy" />
-    <bpmn:dataObject id="DataObject_1p1q4fy" />
-    <bpmn:sequenceFlow id="Flow_0xfnmw7" sourceRef="Activity_07cawcn" targetRef="Activity_0hnaz65" />
-    <bpmn:sequenceFlow id="Flow_0iqpvh1" sourceRef="Activity_0aa6o6d" targetRef="Activity_1bh51bc" />
     <bpmn:sequenceFlow id="Flow_1tld6x2" sourceRef="Activity_1rbwuba" targetRef="Activity_0owbvhn" />
     <bpmn:sequenceFlow id="Flow_1tmxch1" sourceRef="Activity_0fwhqip" targetRef="Activity_1qmyer9" />
     <bpmn:sequenceFlow id="Flow_0wx4cuf" sourceRef="Activity_0owbvhn" targetRef="Activity_0fwhqip" />
+    <bpmn:scriptTask id="Activity_1saujpl" name="вести учет всех зарег-ных в приложении по видам пользователей">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+      <bpmn:property id="Property_0tqhy91" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_1fly57k">
+        <bpmn:sourceRef>DataStoreReference_0oljru9</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0tqhy91</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:scriptTask>
+    <bpmn:sequenceFlow id="Flow_0iqpvh1" sourceRef="Activity_0aa6o6d" targetRef="Activity_1bh51bc" />
+    <bpmn:dataStoreReference id="DataStoreReference_0oljru9" />
+    <bpmn:serviceTask id="Activity_07cawcn" name="создать мероприятие">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_0xfnmw7</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_0xfnmw7" sourceRef="Activity_07cawcn" targetRef="Activity_0hnaz65" />
+    <bpmn:sequenceFlow id="Flow_12g2lps" sourceRef="Activity_1bh51bc" targetRef="Activity_0f81dvt" />
+    <bpmn:scriptTask id="Activity_0hnaz65" name="сгенерировать QR код">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0xfnmw7</bpmn:incoming>
+    </bpmn:scriptTask>
+    <bpmn:scriptTask id="Activity_0aa6o6d" name="регистрация подключений">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_0iqpvh1</bpmn:outgoing>
+    </bpmn:scriptTask>
+    <bpmn:scriptTask id="Activity_1bh51bc" name="расчет кредита подключений">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0iqpvh1</bpmn:incoming>
+      <bpmn:outgoing>Flow_12g2lps</bpmn:outgoing>
+    </bpmn:scriptTask>
+    <bpmn:serviceTask id="Activity_0f81dvt" name="заблокировать регистрацию подключений сверх лимита">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_12g2lps</bpmn:incoming>
+    </bpmn:serviceTask>
+    <bpmn:scriptTask id="Activity_0owbvhn" name="вести учет количества слушателей подключенных к трансляции">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1tld6x2</bpmn:incoming>
+      <bpmn:outgoing>Flow_0wx4cuf</bpmn:outgoing>
+    </bpmn:scriptTask>
+    <bpmn:scriptTask id="Activity_1rbwuba" name="вести учет времени действия QR кода">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+      <bpmn:outgoing>Flow_1tld6x2</bpmn:outgoing>
+      <bpmn:property id="Property_1bdin65" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0m1hb08">
+        <bpmn:sourceRef>DataObjectReference_025vpig</bpmn:sourceRef>
+        <bpmn:targetRef>Property_1bdin65</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:scriptTask>
+    <bpmn:serviceTask id="Activity_1yaffe5" name="открыть доступ к трансляции">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:serviceTask id="Activity_18g0kqz" name="отобразить окно для сканирования QR кода">
+      <bpmn:extensionElements>
+        <zeebe:taskDefinition type="taskDefiniton" />
+      </bpmn:extensionElements>
+    </bpmn:serviceTask>
+    <bpmn:dataObjectReference id="DataObjectReference_025vpig" name="QR код мероприятия - действует&#10;24 часа" dataObjectRef="DataObject_1p1q4fy" />
+    <bpmn:dataObject id="DataObject_1p1q4fy" />
     <bpmn:textAnnotation id="TextAnnotation_0ehgbqe">
       <bpmn:text>пользователи</bpmn:text>
     </bpmn:textAnnotation>
@@ -192,37 +201,7 @@
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_1lt9975" bpmnElement="TextAnnotation_0ehgbqe">
-        <dc:Bounds x="692" y="419" width="149.99265282131663" height="26.645768025078368" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_1a8vecf" bpmnElement="Activity_07cawcn">
-        <dc:Bounds x="880" y="539" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_1c8k4s9" bpmnElement="Activity_1bh51bc">
-        <dc:Bounds x="1260" y="539" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_15cyu14" bpmnElement="Activity_0aa6o6d">
-        <dc:Bounds x="1140" y="539" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_0t74cdf" bpmnElement="Activity_1yaffe5">
-        <dc:Bounds x="1490" y="539" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_0p2y9p7" bpmnElement="Activity_18g0kqz">
-        <dc:Bounds x="1380" y="539" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_1ewfuqb" bpmnElement="Activity_0hnaz65">
-        <dc:Bounds x="1010" y="539" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_1sd8wl1" bpmnElement="Activity_1rbwuba">
-        <dc:Bounds x="1600" y="539" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_13go1q6" bpmnElement="Activity_1saujpl">
-        <dc:Bounds x="750" y="539" width="100" height="80" />
+        <dc:Bounds x="610" y="419" width="149.99265282131663" height="26.645768025078368" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_0qt1mao" bpmnElement="Activity_1qmyer9">
@@ -232,14 +211,8 @@
       <bpmndi:BPMNShape id="BPMNShape_07szmld" bpmnElement="Activity_0fwhqip">
         <dc:Bounds x="1880" y="539" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_15ot1db_di" bpmnElement="Activity_0owbvhn">
-        <dc:Bounds x="1740" y="539" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0rdvrf0_di" bpmnElement="Activity_0imj6js">
         <dc:Bounds x="220" y="539" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_169arzv" bpmnElement="DataStoreReference_0oljru9">
-        <dc:Bounds x="635" y="415" width="50" height="50" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_0vc21sk" bpmnElement="Activity_0pa53zk">
         <dc:Bounds x="330" y="539" width="100" height="80" />
@@ -253,31 +226,75 @@
         <dc:Bounds x="550" y="539" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_13go1q6" bpmnElement="Activity_1saujpl">
+        <dc:Bounds x="670" y="539" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_169arzv" bpmnElement="DataStoreReference_0oljru9">
+        <dc:Bounds x="555" y="415" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1a8vecf" bpmnElement="Activity_07cawcn">
+        <dc:Bounds x="790" y="539" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1ewfuqb" bpmnElement="Activity_0hnaz65">
+        <dc:Bounds x="911" y="539" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_15cyu14" bpmnElement="Activity_0aa6o6d">
+        <dc:Bounds x="1031" y="539" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1c8k4s9" bpmnElement="Activity_1bh51bc">
+        <dc:Bounds x="1156" y="539" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_18fp5ve" bpmnElement="Activity_0f81dvt">
+        <dc:Bounds x="1276" y="539" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_15ot1db_di" bpmnElement="Activity_0owbvhn">
+        <dc:Bounds x="1746" y="539" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1sd8wl1" bpmnElement="Activity_1rbwuba">
+        <dc:Bounds x="1614" y="539" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0t74cdf" bpmnElement="Activity_1yaffe5">
+        <dc:Bounds x="1494" y="539" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0p2y9p7" bpmnElement="Activity_18g0kqz">
+        <dc:Bounds x="1382" y="539" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_00cjiiv" bpmnElement="DataObjectReference_025vpig">
-        <dc:Bounds x="1042" y="424" width="36" height="50" />
+        <dc:Bounds x="952" y="424" width="36" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1024" y="483.5" width="68" height="53" />
+          <dc:Bounds x="934" y="483.5" width="68" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="BPMNEdge_1xflpaz" bpmnElement="Flow_0xfnmw7">
-        <di:waypoint x="980" y="579" />
-        <di:waypoint x="1010" y="579" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0iqpvh1_di" bpmnElement="Flow_0iqpvh1">
-        <di:waypoint x="1240" y="579" />
-        <di:waypoint x="1260" y="579" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_0vwmnw3" bpmnElement="Flow_1tld6x2">
-        <di:waypoint x="1700" y="579" />
-        <di:waypoint x="1740" y="579" />
+        <di:waypoint x="1714" y="579" />
+        <di:waypoint x="1746" y="579" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_1xg0re2" bpmnElement="Flow_1tmxch1">
         <di:waypoint x="1980" y="579" />
         <di:waypoint x="2010" y="579" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0wx4cuf_di" bpmnElement="Flow_0wx4cuf">
-        <di:waypoint x="1840" y="579" />
+        <di:waypoint x="1846" y="579" />
         <di:waypoint x="1880" y="579" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0iqpvh1_di" bpmnElement="Flow_0iqpvh1">
+        <di:waypoint x="1131" y="579" />
+        <di:waypoint x="1156" y="579" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_1xflpaz" bpmnElement="Flow_0xfnmw7">
+        <di:waypoint x="890" y="579" />
+        <di:waypoint x="911" y="579" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12g2lps_di" bpmnElement="Flow_12g2lps">
+        <di:waypoint x="1256" y="579" />
+        <di:waypoint x="1276" y="579" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Participant_0bx3jyn_di" bpmnElement="Participant_0bx3jyn" isHorizontal="true">
         <dc:Bounds x="160" y="120" width="2050" height="269" />
@@ -347,46 +364,46 @@
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_0dovq4i_di" bpmnElement="Flow_0dovq4i">
-        <di:waypoint x="900" y="720" />
-        <di:waypoint x="900" y="619" />
+        <di:waypoint x="810" y="720" />
+        <di:waypoint x="810" y="619" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1nhtstv_di" bpmnElement="Flow_1nhtstv">
-        <di:waypoint x="1350" y="619" />
-        <di:waypoint x="1350" y="720" />
+        <di:waypoint x="1246" y="619" />
+        <di:waypoint x="1246" y="720" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1q38e34_di" bpmnElement="Flow_1q38e34">
-        <di:waypoint x="1160" y="720" />
-        <di:waypoint x="1160" y="619" />
+        <di:waypoint x="1051" y="720" />
+        <di:waypoint x="1051" y="619" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0lbuubn_di" bpmnElement="Flow_0lbuubn">
-        <di:waypoint x="1580" y="619" />
-        <di:waypoint x="1580" y="855" />
+        <di:waypoint x="1584" y="619" />
+        <di:waypoint x="1584" y="855" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0m2g2ol_di" bpmnElement="Flow_0m2g2ol">
-        <di:waypoint x="1470" y="619" />
-        <di:waypoint x="1470" y="855" />
+        <di:waypoint x="1472" y="619" />
+        <di:waypoint x="1472" y="855" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0tilpg1_di" bpmnElement="Flow_0tilpg1">
-        <di:waypoint x="1100" y="619" />
-        <di:waypoint x="1100" y="720" />
+        <di:waypoint x="1001" y="619" />
+        <di:waypoint x="1001" y="720" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataInputAssociation_0m1hb08_di" bpmnElement="DataInputAssociation_0m1hb08">
-        <di:waypoint x="1078" y="449" />
-        <di:waypoint x="1650" y="449" />
-        <di:waypoint x="1650" y="539" />
+        <di:waypoint x="988" y="449" />
+        <di:waypoint x="1664" y="449" />
+        <di:waypoint x="1664" y="539" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_10y6kwp" bpmnElement="DataInputAssociation_1fly57k">
-        <di:waypoint x="685" y="420" />
-        <di:waypoint x="780" y="420" />
-        <di:waypoint x="780" y="539" />
+        <di:waypoint x="605" y="420" />
+        <di:waypoint x="700" y="420" />
+        <di:waypoint x="700" y="539" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0l9ntan_di" bpmnElement="Flow_0l9ntan">
-        <di:waypoint x="760" y="855" />
-        <di:waypoint x="760" y="619" />
+        <di:waypoint x="680" y="855" />
+        <di:waypoint x="680" y="619" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1u44b8w_di" bpmnElement="Flow_1u44b8w">
-        <di:waypoint x="770" y="720" />
-        <di:waypoint x="770" y="619" />
+        <di:waypoint x="690" y="720" />
+        <di:waypoint x="690" y="619" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1cah3sg_di" bpmnElement="Flow_1cah3sg">
         <di:waypoint x="2100" y="619" />
@@ -397,8 +414,8 @@
         <di:waypoint x="2100" y="720" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1hsephs_di" bpmnElement="Flow_1hsephs">
-        <di:waypoint x="1790" y="619" />
-        <di:waypoint x="1790" y="720" />
+        <di:waypoint x="1796" y="619" />
+        <di:waypoint x="1796" y="720" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1vjwbpa_di" bpmnElement="Flow_1vjwbpa">
         <di:waypoint x="230" y="619" />
@@ -445,28 +462,32 @@
         <di:waypoint x="440" y="212" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_14rytpm_di" bpmnElement="Flow_14rytpm">
-        <di:waypoint x="800" y="539" />
-        <di:waypoint x="800" y="380" />
+        <di:waypoint x="720" y="539" />
+        <di:waypoint x="720" y="380" />
         <di:waypoint x="350" y="380" />
         <di:waypoint x="350" y="300" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0pnp7yg_di" bpmnElement="Flow_0pnp7yg">
-        <di:waypoint x="1790" y="539" />
-        <di:waypoint x="1790" y="330" />
+        <di:waypoint x="1796" y="539" />
+        <di:waypoint x="1796" y="330" />
         <di:waypoint x="380" y="330" />
         <di:waypoint x="380" y="300" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0flk35h_di" bpmnElement="Flow_0flk35h">
-        <di:waypoint x="1190" y="539" />
-        <di:waypoint x="1190" y="360" />
+        <di:waypoint x="1081" y="539" />
+        <di:waypoint x="1081" y="360" />
         <di:waypoint x="360" y="360" />
         <di:waypoint x="360" y="300" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_01aeif3_di" bpmnElement="Flow_01aeif3">
-        <di:waypoint x="1310" y="539" />
-        <di:waypoint x="1310" y="350" />
+        <di:waypoint x="1206" y="539" />
+        <di:waypoint x="1206" y="350" />
         <di:waypoint x="370" y="350" />
         <di:waypoint x="370" y="300" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1xcqfxs_di" bpmnElement="Flow_1xcqfxs">
+        <di:waypoint x="1326" y="619" />
+        <di:waypoint x="1326" y="720" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
