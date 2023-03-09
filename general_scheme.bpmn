@@ -477,9 +477,13 @@
       <bpmn:task id="Activity_0iecv2r" name="Назад" />
       <bpmn:task id="Activity_088kv0g" name="Дата и время" />
       <bpmn:task id="Activity_1nwgs0s" name="Место проведения" />
-      <bpmn:task id="Activity_0g8i9bz" name="Спикер" />
+      <bpmn:task id="Activity_0g8i9bz" name="ФИО гида" />
       <bpmn:task id="Activity_0onpirt" name="Создать мероприятие" />
       <bpmn:task id="Activity_0nn71ze" name="Аккаунт заблокирован. Оплатите долг." />
+      <bpmn:task id="Activity_01nlmgy" name="Фото" />
+      <bpmn:task id="Activity_05325nq" name="Телефон для связи" />
+      <bpmn:task id="Activity_1t9xj3j" name="Ссылка на веб страницу" />
+      <bpmn:task id="Activity_1udo4df" name="Описание (маршрут)" />
     </bpmn:subProcess>
     <bpmn:boundaryEvent id="Event_0q97ped" attachedToRef="Activity_1wzedej">
       <bpmn:outgoing>Flow_0bkwobc</bpmn:outgoing>
@@ -2153,6 +2157,22 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_0qr74zc" bpmnElement="Activity_0nn71ze">
         <dc:Bounds x="12250" y="8670" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0a9phhs" bpmnElement="Activity_01nlmgy" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="12410" y="8460" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0lv3ocw" bpmnElement="Activity_1t9xj3j" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="12410" y="8360" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_11ey42p" bpmnElement="Activity_05325nq" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="12410" y="8560" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_1ashviu" bpmnElement="Activity_1udo4df" bioc:stroke="#0d4372" bioc:fill="#bbdefb" color:background-color="#bbdefb" color:border-color="#0d4372">
+        <dc:Bounds x="12410" y="8255" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_0nxa1zx" bpmnElement="Event_0q97ped">
