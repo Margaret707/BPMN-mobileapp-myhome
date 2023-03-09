@@ -970,7 +970,6 @@
     <bpmn:exclusiveGateway id="Gateway_1q7saqi">
       <bpmn:incoming>Flow_1lycs04</bpmn:incoming>
       <bpmn:incoming>Flow_1ourkw7</bpmn:incoming>
-      <bpmn:incoming>Flow_19bifpk</bpmn:incoming>
       <bpmn:incoming>Flow_0g5qohh</bpmn:incoming>
       <bpmn:outgoing>Flow_0z6yehz</bpmn:outgoing>
       <bpmn:outgoing>Flow_1iynfkq</bpmn:outgoing>
@@ -1161,6 +1160,7 @@
       <bpmn:incoming>Flow_1f6779n</bpmn:incoming>
       <bpmn:incoming>Flow_1a3d946</bpmn:incoming>
       <bpmn:incoming>Flow_0y5ha5y</bpmn:incoming>
+      <bpmn:incoming>Flow_19bifpk</bpmn:incoming>
       <bpmn:outgoing>Flow_09zv8dm</bpmn:outgoing>
       <bpmn:outgoing>Flow_0a65cjw</bpmn:outgoing>
       <bpmn:outgoing>Flow_1x0n7zu</bpmn:outgoing>
@@ -1355,7 +1355,7 @@
     </bpmn:boundaryEvent>
     <bpmn:sequenceFlow id="Flow_1lycs04" name="Первый запуск?" sourceRef="Event_08f0rj1" targetRef="Gateway_1q7saqi" />
     <bpmn:sequenceFlow id="Flow_1ourkw7" sourceRef="Activity_0cxdo03" targetRef="Gateway_1q7saqi" />
-    <bpmn:sequenceFlow id="Flow_19bifpk" sourceRef="Activity_1thd78z" targetRef="Gateway_1q7saqi" />
+    <bpmn:sequenceFlow id="Flow_19bifpk" sourceRef="Activity_1thd78z" targetRef="Activity_0k09bol" />
     <bpmn:sequenceFlow id="Flow_0g5qohh" sourceRef="Activity_139habe" targetRef="Gateway_1q7saqi" />
     <bpmn:sequenceFlow id="Flow_0z6yehz" name="Нет&#10;" sourceRef="Gateway_1q7saqi" targetRef="Activity_0k09bol" />
     <bpmn:sequenceFlow id="Flow_1iynfkq" name="Да" sourceRef="Gateway_1q7saqi" targetRef="Activity_18gdrph" />
@@ -4177,14 +4177,14 @@
       <bpmndi:BPMNEdge id="Flow_1ourkw7_di" bpmnElement="Flow_1ourkw7">
         <di:waypoint x="1070" y="2773" />
         <di:waypoint x="1070" y="2793" />
-        <di:waypoint x="450" y="2793" />
-        <di:waypoint x="450" y="2458" />
+        <di:waypoint x="430" y="2793" />
+        <di:waypoint x="430" y="2478" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_19bifpk_di" bpmnElement="Flow_19bifpk">
         <di:waypoint x="4240" y="2762" />
-        <di:waypoint x="4240" y="2840" />
-        <di:waypoint x="430" y="2840" />
-        <di:waypoint x="430" y="2478" />
+        <di:waypoint x="4240" y="2800" />
+        <di:waypoint x="1140" y="2800" />
+        <di:waypoint x="1140" y="2670" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0g5qohh_di" bpmnElement="Flow_0g5qohh">
         <di:waypoint x="5630" y="2792" />
