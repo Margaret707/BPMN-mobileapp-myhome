@@ -636,7 +636,6 @@
     <bpmn:task id="Activity_129ofd2" name="Сохранение обновленных данных" />
     <bpmn:task id="Activity_012aobh" name="Отправляется запрос на  изменение параметров" />
     <bpmn:task id="Activity_0ddp59e" name="Отправляется запрос на изменение статуса трансляции" />
-    <bpmn:task id="Activity_0r6059z" name="В базе данных сервера изменяется" />
     <bpmn:task id="Activity_0squtn1" name="Компонент рассылки электронных писем" />
     <bpmn:task id="Activity_04uybwa" name="Компонент кредита подключений" />
     <bpmn:task id="Activity_10qqkz3" name="Отправляется запрос на удаление трансляции" />
@@ -729,6 +728,7 @@
     <bpmn:sequenceFlow id="Flow_0cqdju4" sourceRef="Activity_0up2nai" targetRef="Activity_0nncq6a" />
     <bpmn:sequenceFlow id="Flow_0wbubgz" sourceRef="Activity_1gsiyk2" targetRef="Activity_0up2nai" />
     <bpmn:sequenceFlow id="Flow_11m6bhv" sourceRef="Activity_0up2nai" targetRef="Activity_0i2gj1f" />
+    <bpmn:task id="Activity_0r6059z" name="В базе данных сервера изменяется" />
   </bpmn:process>
   <bpmn:process id="Process_03d4o0t" isExecutable="false">
     <bpmn:task id="Activity_0anvmk1" name="Назад">
@@ -5061,10 +5061,6 @@
         <dc:Bounds x="9671" y="400" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_11qrmr1" bpmnElement="Activity_0r6059z">
-        <dc:Bounds x="8181" y="290" width="100" height="80" />
-        <bpmndi:BPMNLabel />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_01iliyo" bpmnElement="Activity_0squtn1">
         <dc:Bounds x="7981" y="190" width="100" height="80" />
         <bpmndi:BPMNLabel />
@@ -5142,6 +5138,10 @@
         <bpmndi:BPMNLabel>
           <dc:Bounds x="4198" y="555" width="76" height="27" />
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_11qrmr1" bpmnElement="Activity_0r6059z">
+        <dc:Bounds x="9910" y="190" width="100" height="80" />
+        <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1mk243i_di" bpmnElement="Flow_1mk243i">
         <di:waypoint x="13019" y="520" />
