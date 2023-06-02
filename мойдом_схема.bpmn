@@ -1271,10 +1271,10 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1xo0m0j_di" bpmnElement="Flow_1xo0m0j">
-        <di:waypoint x="1760" y="330" />
-        <di:waypoint x="1760" y="1170" />
+        <di:waypoint x="1780" y="330" />
+        <di:waypoint x="1780" y="1170" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1756" y="747" width="87" height="27" />
+          <dc:Bounds x="1776" y="747" width="87" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0y14dhh_di" bpmnElement="Flow_0y14dhh">
@@ -1285,10 +1285,10 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0qqrxj5_di" bpmnElement="Flow_0qqrxj5">
-        <di:waypoint x="1820" y="1170" />
-        <di:waypoint x="1820" y="330" />
+        <di:waypoint x="1880" y="1170" />
+        <di:waypoint x="1880" y="330" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1823" y="730" width="74" height="40" />
+          <dc:Bounds x="1883" y="730" width="74" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="DataInputAssociation_1qhzg4o_di" bpmnElement="DataInputAssociation_1qhzg4o">
