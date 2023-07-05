@@ -20,6 +20,7 @@
     <bpmn:messageFlow id="Flow_1taccl8" name="разместить информацию" sourceRef="Participant_1yqjt97" targetRef="Participant_0shcjed" />
     <bpmn:messageFlow id="Flow_0yuuuyg" name="администрировать" sourceRef="Participant_1yqjt97" targetRef="Participant_0shcjed" />
     <bpmn:messageFlow id="Flow_0gwwh3r" name="модерировать разделы" sourceRef="Participant_1yqjt97" targetRef="Activity_06u48j3" />
+    <bpmn:messageFlow id="Flow_0652try" name="посмотреть тарифы" sourceRef="Participant_0oiguod" targetRef="Participant_0shcjed" />
   </bpmn:collaboration>
   <bpmn:process id="Process_1pfdlkr" isExecutable="true">
     <bpmn:task id="Activity_145n7ex" name="проверка наличия телефона в БД">
@@ -1233,24 +1234,24 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0g8pjgx_di" bpmnElement="Flow_0g8pjgx">
-        <di:waypoint x="429" y="2270" />
-        <di:waypoint x="429" y="2070" />
+        <di:waypoint x="350" y="2270" />
+        <di:waypoint x="350" y="2070" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="448" y="2184" width="65" height="40" />
+          <dc:Bounds x="369" y="2184" width="65" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0pxv937_di" bpmnElement="Flow_0pxv937">
-        <di:waypoint x="610" y="2270" />
-        <di:waypoint x="610" y="2070" />
+        <di:waypoint x="490" y="2270" />
+        <di:waypoint x="490" y="2070" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="623" y="2175" width="53" height="40" />
+          <dc:Bounds x="503" y="2175" width="53" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1p8k6w0_di" bpmnElement="Flow_1p8k6w0">
-        <di:waypoint x="750" y="2270" />
-        <di:waypoint x="750" y="2070" />
+        <di:waypoint x="600" y="2270" />
+        <di:waypoint x="600" y="2070" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="768" y="2167" width="84" height="53" />
+          <dc:Bounds x="618" y="2167" width="84" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1a01dbr_di" bpmnElement="Flow_1a01dbr">
@@ -1268,10 +1269,10 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1fe5bwp_di" bpmnElement="Flow_1fe5bwp">
-        <di:waypoint x="1370" y="2270" />
-        <di:waypoint x="1370" y="2070" />
+        <di:waypoint x="1360" y="2270" />
+        <di:waypoint x="1360" y="2070" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="1382" y="2144" width="76" height="80" />
+          <dc:Bounds x="1372" y="2144" width="76" height="80" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0tzzp24_di" bpmnElement="Flow_0tzzp24">
@@ -1328,6 +1329,13 @@
         <di:waypoint x="1180" y="1180" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1183" y="1126" width="73" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0652try_di" bpmnElement="Flow_0652try">
+        <di:waypoint x="740" y="2270" />
+        <di:waypoint x="740" y="2070" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="750" y="2170" width="59" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
